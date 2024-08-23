@@ -7,8 +7,9 @@ import (
 )
 
 type Gateway struct {
-	UserHost string
-	Userport string
+	UserHost    string
+	Userport    string
+	Serviceport string
 }
 
 func GatewayConfig() (*Gateway, error) {
@@ -17,7 +18,8 @@ func GatewayConfig() (*Gateway, error) {
 		return nil, err
 	}
 	return &Gateway{
-		UserHost: os.Getenv("USER_HOST"),
-		Userport: os.Getenv("USER_PORT"),
+		UserHost:    os.Getenv("USER_HOST"),
+		Userport:    os.Getenv("USER_PORT"),
+		Serviceport: os.Getenv("SERVICE_PORT"),
 	}, nil
 }
